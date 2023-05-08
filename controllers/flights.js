@@ -33,7 +33,7 @@ function create(req, res){
 }
 
 function remove(req, res){
-    Flight.deleteOne(req.body)
+    Flight.findById(req.params.id).deleteOne(req.body)
     .then(flightDoc => {
         return res.redirect(`/flights`)
     })
